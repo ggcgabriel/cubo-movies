@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
-import { useMovieDetails } from '@/hooks/useMovieDetails'
+import { useMovieDetails, useMovieVideos } from '@/hooks/useMovieDetails'
 import { MovieHero } from '@/components/MovieDetails/MovieHero'
+import { MovieTrailer } from '@/components/MovieDetails/MovieTrailer'
 
 export default function MovieDetails() {
   const { id } = useParams<{ id: string }>()
@@ -11,6 +12,10 @@ export default function MovieDetails() {
     isLoading: isLoadingMovie, 
     error: movieError 
   } = useMovieDetails(movieId)
+
+  const { 
+    data: videos 
+  } = useMovieVideos(movieId)
 
  
   if (isLoadingMovie) {
@@ -47,8 +52,9 @@ export default function MovieDetails() {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 space-y-6">
       <MovieHero movie={movie} />
+      {videos && <MovieTrailer videos={videos.results} />}
     </div>
   )
 }
