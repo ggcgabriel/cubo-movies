@@ -8,8 +8,8 @@ export default function NavBar() {
   const [isDark, setIsDark] = useState(true)
   const navigate = useNavigate()
   return (
-    <header className="border-box-4 max-w-7xl mx-auto w-full">
-      <div className="flex items-center justify-between p-2 px-4 w-full">
+    <header className="box-border mx-auto w-full border-b border-gray-700">
+      <div className="flex items-center justify-between p-4 px-6 w-full max-w-7xl mx-auto">
         <div className="flex items-center gap-2" onClick={() => navigate('/')}>
           <Logo className="w-30 cursor-pointer" isDark={isDark} />
           <span className="text-sm font-bold" style={{ color: isDark ? 'white' : 'black' }}>Movies</span>
