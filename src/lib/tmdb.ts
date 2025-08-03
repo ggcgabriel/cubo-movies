@@ -115,7 +115,17 @@ export const tmdbService = {
     },
     page: number = 1
   ): Promise<TMDBResponse<Movie>> => {
-    const params: any = {
+    interface FilterParams {
+      page: number
+      sort_by: string
+      with_genres?: number
+      primary_release_year?: number
+      'vote_average.gte'?: number
+      with_original_language?: string
+      with_status?: string
+    }
+
+    const params: FilterParams = {
       page,
       sort_by: filters.sortBy || 'popularity.desc',
     }

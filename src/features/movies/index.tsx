@@ -6,7 +6,7 @@ export function Movies() {
 
   return (
     <div className="relative max-w-7xl mx-auto">
-      <h2 className="text-white text-xl font-bold mb-6">{title}</h2>
+      <h2 className="text-theme text-xl font-bold mb-6">{title}</h2>
       
       {error && (
         <div className="text-red-400 mb-4">Erro ao carregar filmes: {error.message}</div>

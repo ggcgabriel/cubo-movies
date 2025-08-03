@@ -49,14 +49,14 @@ export function SearchInput({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="pl-10 pr-12 backdrop-blur-sm border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 h-10"
+          className="pl-10 pr-12 backdrop-blur-sm border-gray-300 dark:border-gray-600 text-theme placeholder-gray-500 dark:placeholder-gray-400 focus:border-purple-500 h-10"
         />
-        <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+        <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400 h-4 w-4" />
         <Button
           type="submit"
           variant="ghost"
           size="icon"
-          className="absolute right-1 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white h-8"
+          className="absolute right-1 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400 hover:text-theme h-8"
         >
           <SearchIcon className="h-4 w-4" />
         </Button>

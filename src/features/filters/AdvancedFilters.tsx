@@ -23,7 +23,6 @@ export function AdvancedFilters() {
 
   const hasActiveFilters = filters.genre || filters.year || filters.rating || filters.language || filters.searchQuery
 
-  // Mapeamento de gêneros
   const genreMap: Record<number, string> = {
     28: 'Ação',
     12: 'Aventura',
@@ -46,7 +45,6 @@ export function AdvancedFilters() {
     37: 'Faroeste',
   }
 
-  // Mapeamento de idiomas
   const languageMap: Record<string, string> = {
     'pt-BR': 'Português (Brasil)',
     'en-US': 'Inglês (EUA)',
@@ -60,10 +58,10 @@ export function AdvancedFilters() {
   }
 
   return (
-    <Card className="bg-gray-800/30 border-gray-600">
+    <Card className="bg-white/80 dark:bg-gray-800/30 border-gray-300 dark:border-gray-600">
       <CardContent className="p-4">
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-lg font-semibold text-white">Filtros</h3>
+          <h3 className="text-lg font-semibold text-theme">Filtros</h3>
           
           {hasActiveFilters && (
             <Button
@@ -80,35 +78,35 @@ export function AdvancedFilters() {
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="space-y-2">
-              <Label className="text-sm font-medium text-gray-300">
+              <Label className="text-sm font-medium text-theme-secondary">
                 Gênero
               </Label>
               <GenreFilter />
             </div>
 
             <div className="space-y-2">
-              <Label className="text-sm font-medium text-gray-300">
+              <Label className="text-sm font-medium text-theme-secondary">
                 Ano
               </Label>
               <YearFilter />
             </div>
 
             <div className="space-y-2">
-              <Label className="text-sm font-medium text-gray-300">
+              <Label className="text-sm font-medium text-theme-secondary">
                 Avaliação
               </Label>
               <RatingFilter />
             </div>
 
             <div className="space-y-2">
-              <Label className="text-sm font-medium text-gray-300">
+              <Label className="text-sm font-medium text-theme-secondary">
                 Ordenar por
               </Label>
               <SortFilter />
             </div>
 
             <div className="space-y-2">
-              <Label className="text-sm font-medium text-gray-300">
+              <Label className="text-sm font-medium text-theme-secondary">
                 Idioma Original
               </Label>
               <LanguageFilter />
@@ -116,8 +114,8 @@ export function AdvancedFilters() {
           </div>
 
           {hasActiveFilters && (
-            <div className="pt-4 border-t border-gray-600">
-              <h4 className="text-sm font-medium text-gray-300 mb-2">Filtros Ativos:</h4>
+            <div className="pt-4 border-t border-gray-300 dark:border-gray-600">
+              <h4 className="text-sm font-medium text-theme-secondary mb-2">Filtros Ativos:</h4>
               <div className="flex flex-wrap gap-2">
                 {filters.searchQuery && (
                   <Badge variant="secondary" className="bg-purple-600 text-white flex items-center gap-1">

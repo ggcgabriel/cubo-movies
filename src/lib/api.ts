@@ -74,7 +74,6 @@ export interface Movie {
   genre_ids: number[]
   adult: boolean
   video: boolean
-  // Propriedades detalhadas (para MovieDetails)
   tagline?: string
   runtime?: number
   status?: string

@@ -30,11 +30,11 @@ export function MovieHero({ movie }: MovieHeroProps) {
               />
             </div>
 
-            <div className="text-white space-y-6">
+            <div className="space-y-6">
               <div>
-                <h1 className="text-5xl font-bold mb-2 text-yellow-400">
+                <p className="text-5xl font-bold mb-2 text-white">
                   {movie.title}
-                </h1>
+                </p>
                 
                 {movie.original_title !== movie.title && (
                   <p className="text-xl text-gray-300 mb-2">
