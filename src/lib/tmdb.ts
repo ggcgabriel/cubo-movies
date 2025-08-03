@@ -103,6 +103,57 @@ export const tmdbService = {
     return response.data
   },
 
+  getFilteredMovies: async (
+    filters: {
+      searchQuery?: string
+      genre?: number | null
+      year?: number | null
+      rating?: number | null
+      sortBy?: string
+      language?: string | null
+      status?: string | null
+    },
+    page: number = 1
+  ): Promise<TMDBResponse<Movie>> => {
+    const params: any = {
+      page,
+      sort_by: filters.sortBy || 'popularity.desc',
+    }
+
+    if (filters.genre) {
+      params.with_genres = filters.genre
+    }
+    if (filters.year) {
+      params.primary_release_year = filters.year
+    }
+    if (filters.rating) {
+      params['vote_average.gte'] = filters.rating
+    }
+    if (filters.language) {
+      params.with_original_language = filters.language.split('-')[0]
+    }
+    if (filters.status) {
+      params.with_status = filters.status
+    }
+
+    const endpoint = filters.searchQuery
+      ? tmdbEndpoints.movies.search
+      : '/discover/movie'
+
+    const requestParams = filters.searchQuery
+      ? {
+          query: filters.searchQuery,
+          page,
+          include_adult: false,
+        }
+      : params
+
+    const response = await tmdbApi.get(endpoint, {
+      params: requestParams,
+    })
+    return response.data
+  },
+
   getGenres: async (): Promise<{ genres: Genre[] }> => {
     const response = await tmdbApi.get(tmdbEndpoints.genres.list)
     return response.data

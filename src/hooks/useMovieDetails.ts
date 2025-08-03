@@ -6,7 +6,7 @@ export const useMovieDetails = (movieId: number) => {
     queryKey: ['movie-details', movieId],
     queryFn: () => tmdbService.getMovieDetails(movieId),
     enabled: !!movieId,
-    staleTime: 10 * 60 * 1000, // 10 minutos
+    staleTime: 10 * 60 * 1000,
   })
 }
 
@@ -15,7 +15,7 @@ export const useMovieCredits = (movieId: number) => {
     queryKey: ['movie-credits', movieId],
     queryFn: () => tmdbService.getMovieCredits(movieId),
     enabled: !!movieId,
-    staleTime: 10 * 60 * 1000, // 10 minutos
+    staleTime: 10 * 60 * 1000,
   })
 }
 
@@ -24,7 +24,7 @@ export const useMovieVideos = (movieId: number) => {
     queryKey: ['movie-videos', movieId],
     queryFn: () => tmdbService.getMovieVideos(movieId),
     enabled: !!movieId,
-    staleTime: 10 * 60 * 1000, // 10 minutos
+    staleTime: 10 * 60 * 1000,
   })
 }
 
@@ -33,6 +33,6 @@ export const useSimilarMovies = (movieId: number) => {
     queryKey: ['similar-movies', movieId],
     queryFn: () => tmdbService.getSimilarMovies(movieId),
     enabled: !!movieId,
-    staleTime: 5 * 60 * 1000, // 5 minutos
+    staleTime: 5 * 60 * 1000,
   })
 }

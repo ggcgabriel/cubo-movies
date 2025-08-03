@@ -9,18 +9,18 @@ export function MovieHero({ movie }: MovieHeroProps) {
   const profit = (movie.revenue || 0) - (movie.budget || 0)
 
   return (
-          <div className="space-y-6">
-        <div className="hidden lg:block relative overflow-hidden rounded-lg">
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${getBackdropUrl(movie.backdrop_path, 'w1280')})`,
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50" />
-          </div>
+    <div className="space-y-6">
+      <div className="hidden lg:block relative overflow-hidden rounded-lg">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${getBackdropUrl(movie.backdrop_path, 'w1280')})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50" />
+        </div>
 
-          <div className="relative flex items-start p-6 md:p-8">
+        <div className="relative flex items-start p-6 md:p-8">
           <div className="grid grid-cols-3 gap-6 md:gap-8 w-full">
             <div className="flex justify-start">
               <img

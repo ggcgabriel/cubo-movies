@@ -51,7 +51,6 @@ export const formatCurrency = (amount: number) => {
   }).format(amount)
 }
 
-// Função para mapear IDs de gênero para nomes
 export const getGenreNames = (genreIds: number[]) => {
   const genreMap: Record<number, string> = {
     28: 'Ação',
