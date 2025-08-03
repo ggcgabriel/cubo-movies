@@ -19,7 +19,7 @@ Uma aplicação web moderna para explorar filmes, construída com React, TypeScr
 - **React 19** - Biblioteca para interfaces
 - **TypeScript** - Tipagem estática
 - **Vite** - Build tool e dev server
-- **Tailwind CSS** - Framework de estilização
+- **Tailwind CSS 4** - Framework de estilização
 - **Lucide React** - Ícones
 
 ### **Gerenciamento de Estado**
@@ -33,12 +33,14 @@ Uma aplicação web moderna para explorar filmes, construída com React, TypeScr
 
 ### **Roteamento**
 
-- **React Router** - Navegação entre páginas
+- **React Router DOM** - Navegação entre páginas
 
 ### **UI Components**
 
-- **Radix UI** - Componentes acessíveis
+- **Radix UI** - Componentes acessíveis (Avatar, Dialog, Popover, Select, etc.)
 - **Class Variance Authority** - Variantes de componentes
+- **Embla Carousel** - Componente de carrossel
+- **CMDK** - Interface de comando
 
 ## 🚀 Como executar o projeto
 
@@ -89,13 +91,20 @@ npm run dev
 
 O projeto estará disponível em `http://localhost:5173`
 
+> **Nota:** O Vite usa a porta 5173 por padrão. Se esta porta estiver ocupada, o Vite automaticamente usará a próxima porta disponível.
+
 ## 📁 Estrutura do Projeto
 
 ```
 src/
 ├── components/
 │   ├── ui/                    # Componentes base (Radix UI)
-│   └── MovieDetails/          # Componentes específicos de detalhes
+│   ├── MovieDetails/          # Componentes específicos de detalhes
+│   ├── NavBar.tsx             # Barra de navegação
+│   ├── Footer.tsx             # Rodapé
+│   └── Logo.tsx               # Logo da aplicação
+├── contexts/
+│   └── ThemeContext.tsx       # Contexto de tema
 ├── features/
 │   ├── filters/              # Funcionalidade de filtros/busca
 │   ├── movies/               # Listagem e cards de filmes
@@ -103,7 +112,8 @@ src/
 ├── hooks/
 │   ├── useMovies.ts          # Hooks para busca de filmes
 │   ├── useMovieDetails.ts    # Hooks para detalhes do filme
-│   └── useSearchData.ts      # Hook para dados de busca
+│   ├── useSearchData.ts      # Hook para dados de busca
+│   └── useFilteredMovies.ts  # Hook para filmes filtrados
 ├── lib/
 │   ├── api.ts                # Cliente Axios configurado
 │   ├── tmdb.ts               # Serviços da API TMDB
@@ -162,18 +172,28 @@ pnpm lint
 - Lazy loading de imagens
 - Cache inteligente com React Query
 - Bundle otimizado com Vite
+- Debounce na busca para otimizar requisições
 
 ### **Acessibilidade**
 
 - Componentes Radix UI
 - Navegação por teclado
 - Semântica HTML adequada
+- Suporte a leitores de tela
 
 ### **Responsividade**
 
 - Mobile-first design
 - Breakpoints otimizados
 - Grid responsivo
+- Interface adaptativa
+
+### **Desenvolvimento**
+
+- TypeScript para type safety
+- ESLint para qualidade de código
+- Hot reload com Vite
+- Alias de importação (@/ para src/)
 
 ## 🤝 Contribuindo
 
