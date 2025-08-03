@@ -5,7 +5,6 @@ interface MovieTrailerProps {
 }
 
 export function MovieTrailer({ videos }: MovieTrailerProps) {
-  // Filtrar apenas trailers do YouTube
   const trailers = videos?.filter(video => 
     video.site === 'YouTube' && 
     video.type === 'Trailer'

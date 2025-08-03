@@ -16,7 +16,7 @@ export default function App() {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}>
-        <div className="absolute inset-0 bg-black opacity-70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/90 to-black/100" />
 
         <div className="relative z-10 h-full">
           <Routes>
