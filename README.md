@@ -2,6 +2,8 @@
 
 Uma aplicação web moderna para explorar filmes, construída com React, TypeScript e integração com a API do TMDB.
 
+🌐 **Demo:** [https://cubo-movies.vercel.app/](https://cubo-movies.vercel.app/)
+
 ## ✨ Funcionalidades
 
 - 🎯 **Busca de filmes** - Pesquise por qualquer filme
